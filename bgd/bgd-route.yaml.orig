@@ -1,15 +1,21 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
+  creationTimestamp: null
   labels:
     app: bgd
   name: bgd
   namespace: bgd
 spec:
-  host: "bgd.apps.cluster-45b4l.45b4l.sandbox905.opentlc.com"
+  host: "bgd.apps.cluster-77f2.77f2.sandbox506.opentlc.com"
   port:
     targetPort: 8080
   to:
     kind: Service
     name: bgd
     weight: 100
+status:
+  ingress:
+  - conditions:
+    - status: "True"
+      type: Admitted
